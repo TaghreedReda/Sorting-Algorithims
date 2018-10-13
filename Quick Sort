@@ -1,0 +1,35 @@
+// fkrt el code eno bya5od pivot mn a5r el array 
+//el worst case lw hwa tl3 akbr wa7d .. ysort kol ely as8r mno w y7oto b3dhom 
+//b3den ybd2 mn b3d mkano el gdeed w ykrr el mwdoo3
+int partitionn(int x[], int l, int h){
+	// by5ly el last element hwa el pivot 
+	int p = x[h];
+	//2 pointers .. i abl el array ma tbd2 -1 w j 3nd 0 
+	int i = l - 1, j = l;
+
+
+	while (j<h){
+		//lw awl l2a x[j] ly wa2f 3leha <= el pivot by7otaha f awl el array lw fe 7aga 8erha
+		//w bymshy 3leha b counter i.. lw 8yr mkan 7aga bysh8lo
+		if (x[j] <= p){
+			i++;
+			swap(x[i], x[j]);
+		}
+		//8yr ma8yrsh byzwd j 3ashan da ely mashy beh 3al array
+		j++;
+	}
+	//keda l7d i metrtb as8r mn el p .. y3ml swap w y7ot el p b3d a5r element as8r mno
+	swap(x[i + 1], x[h]);
+	//wyrg3 i+1 3ashan de tb2a el pointer ely abl bdayt el goz2 ely haysort feh 
+	return (i + 1);
+}
+
+void quick_sort(int x[], int l, int h){
+	if (l<h){
+		int pp = partitionn(x, l, h);
+		//hna h = i
+		quick_sort(x, l, pp - 1);
+		//w hna l = i+2 3ashan yb2a el bedaya el sa7 ll array ely haysht8l feha
+		quick_sort(x, pp + 1, h);
+	}
+}
