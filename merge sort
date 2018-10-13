@@ -1,0 +1,54 @@
+
+void Merge(int x[],int h ,int l,int m){
+	//3ndaha 2 pointers i byshawr 3la awl el nos el awalany w j 3la awl el nos el tany
+	int i = l, j = m + 1;
+	//k -> counter
+	//array kol mara el size bta3ha byb2a 
+	int k = 0, tmp[h - l + 1];
+	
+while (i<=m && j<=h){
+
+    //hena byqarn x[i] w x[j] , wl kebera by7otaha fl tmp w yzwd el counter bta3o 
+	//ely hwa k w yzwd counter el half ely 5ad mno el raqm
+	if(x[i]<x[j]){
+	
+        tmp[k]=x[i];
+        i++;
+        k++;
+    }
+    else{
+         tmp[k]=x[j];
+        j++;
+        k++;
+    }
+}
+// hena hy3dy 3la el 1st half lw l2a i lsa mawslsh l m yb2a 3dd el elements ely kan 
+// fel 1st half kan akbr mn ely fl 2nd wl values akbr fa bya5odhom y7othom f a5r el tmp array
+while (i<=m){
+    tmp[k]=x[i];
+   i++;
+   k++;
+}
+// w hena by3ml nfs el klam lw size el 2nd half kan hwa ely akbr
+while (j<=h){
+     tmp[k]=x[j];
+     j++;
+     k++;
+}
+//hena hayro7 ll goz2 ely kan lsa mrtbo 7aln fl tmp w y7oto f nfs mkano fl original
+for(int y=l ;y<=h;y++){
+    x[y]=tmp[y-l];
+}
+}
+
+void merge_sort(int x[],int l , int h){
+	
+	
+    int m=l+(h-l)/2;
+	
+    merge_sort(x,l,m);
+	
+    merge_sort(x,m+1,h);
+	
+    Merge(x,h,l,m);
+}
