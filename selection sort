@@ -1,0 +1,13 @@
+void selection_sort(int n, int x[]){
+	//byo2f 3nd wa7d w y3tbro el so8yr w ydwar 3la kol ely b3deh kol ma yla2y as8r y5alh min
+	//zy ma kona bn-search 3la min value ..
+	for (int i = 0; i<n; i++){
+		int mini = x[i], d = i;
+		for (int j = i + 1; j<n; j++){
+			if (x[j]<mini)
+				mini = x[j], d = j;
+		}
+		// ytl3 mn el loop m3ah mkan as8ar wa7d lw mwgod w y3ml swap
+		swap(x[i], x[d]);
+	}
+}
