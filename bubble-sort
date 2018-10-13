@@ -1,0 +1,18 @@
+// byo2f 3nd kol element w ykarno b kol ely ableh 
+//kol ma yla2y wa7d akbr mno ableh y3ml swap l7d ma yrtb
+ 
+void bubble_sort(int n, int x[]){
+
+//m5lyah ybd2 mn tany element 3ashan yb2a feh ableh ykarnhom sawa
+
+for (int i = 1; i <= n; i++){
+
+//a5ro n-i 3ashan maykarnsh kter 3al fady 
+
+   for (int j = 0; j<n - i; j++){
+		   	if (x[j]>x[j + 1])
+				swap(x[j], x[j + 1]);
+		}
+	}
+
+}
