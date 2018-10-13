@@ -1,0 +1,16 @@
+
+void insertion_sort(int n, int x[]){
+	//bybd2 mn tany element
+	for (int i = 1; i<n; i++){
+		//y7ot el value ely feh f 'm'
+		int m = x[i], j;
+		//bykarn mn awl element ablo l7d el elment ely 3nd 0
+		//awl ma yla2y element akbr mno y5aleh ysawy ely ableh 
+		//l7d ma ly 3nd j ykon hwa hwa 3nd j w j+1 ..
+		for (j = i - 1; j >= 0 && x[j]> m; j--){
+			x[j + 1] = x[j];
+		}
+		// by5rog mn el loop w hwa 3nd j-1 w y7ot m fe j fa yb2o mtrtben
+		x[j + 1] = m;
+	}
+}
